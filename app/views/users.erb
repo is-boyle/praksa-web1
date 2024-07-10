@@ -1,0 +1,19 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>User select</title>
+    <link rel="stylesheet" href="/styles/comments.css">
+</head>
+<body class="page">
+    <div class="select">
+        <p id="users">Users</p>
+        <% for user in users %>
+            <a href="/user-select/<%= user[0] %>"><p class="user"><%= user[1]["name"].capitalize %></p></a>
+        <% end %>
+        <hr>
+        <a href="/user-add"><p class="user" id="add">Add new user</p></a>
+    </div>
+</body>
+</html>

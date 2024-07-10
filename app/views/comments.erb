@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Comment submission</title>
+    <link rel="stylesheet" href="/styles/comments.css">
+</head>
+<body>
+    <header>
+        <%# <form name="userselect" method="get" action="/user-select">
+            <button>User select</button>
+        </form> %>
+        <a href="/user-select">User select</a>
+        <% if !user.nil? %>
+            <div class="logout">
+                <span>Logged in as <%= user %></span>
+                <%# <form method="get" name="logout" action="/log-out">
+                    <button>Log out</button>
+                </form> %>
+                <a href="/log-out">Log out</a>
+            </div>
+        <% end %>
+    </header>
+    <hr>
+    <form name="comment" method="post" action="/add-comment">
+        <p>Add Comment:</p>
+        <% if flash[:error] %>
+            <p class="error"><%= flash[:error] %></p>
+        <% end %>
+        <textarea name="body" rows="5" cols="50" required></textarea>
+        <br/>
+        <button>Submit</button>
+    </form>
+    <br/>
+    <% for comment in comments %>
+        <div class="comment">
+            <%= comment.keys.first %>, <%= comment[comment.keys.first]["timestamp"] %><br/><hr> "<%= comment[comment.keys.first]["comment"]%>"
+        </div>
+    <% end %>
+</body>
+</html>

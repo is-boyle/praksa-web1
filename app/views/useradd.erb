@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="/styles/comments.css">
+</head>
+<body class="page">
+    <div class="select">
+        <form name="useradd" method="post" action="/user-add">
+            <fieldset>
+                <p>
+                    <label>
+                        <span>E-mail:</span>
+                        <input type="text" name="email" size="25" pattern=".+@.+\..+" title="Not a valid e-mail address" required>
+                    </label>
+                </p>
+                <p>
+                    <label>
+                        <span>Name:</span>
+                        <input type="text" name="name" size="25" required>
+                    </label>
+                </p>
+                <button>Add user</button>
+            </fieldset>
+        </form>
+    </div>
+</body>
+</html>

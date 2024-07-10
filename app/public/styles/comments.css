@@ -1,0 +1,139 @@
+body {
+    background-color: #202020;
+}
+
+body * {
+    font-family: Arial, Helvetica, sans-serif;
+    font-size: 15px;
+    color: white;
+}
+
+textarea {
+    background-color: gray;
+    border: none;
+    margin-bottom: 5px;
+    color: black;
+}
+
+button {
+    background-color: #404040;
+    border: none;
+    color: white;
+}
+
+button:active {
+    background-color: white;
+    color: black;
+}
+
+.comment {
+    margin: 10px;
+    padding: 5px;
+    border: solid black 1px;
+    border-radius: 5px;
+    background-color: gray;
+    word-wrap: break-word;
+    width: 80vw;
+    color: black;
+}
+
+.page {
+    margin: 0px;
+    height: 95vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.select {
+    display: flex;
+    flex-direction: column;
+    border: solid black 1px;
+    border-radius: 5px;
+    background-color: gray;
+    padding: 5px;
+    min-width: 200px;
+}
+
+.user {
+    margin: 0px;
+    padding: 10px 0px 10px 15px;
+    font-size: 20px;
+    outline: solid white 1px;
+}
+
+.user:hover {
+    background-color: white;
+    color: #202020;
+    cursor: pointer;
+}
+
+#users {
+    font-size: 20px;
+    text-align: center;
+    font-weight: bold;
+    margin-bottom: 10px;
+}
+
+a {
+    text-decoration: none;
+}
+
+a:not(:has(> .user)) {
+    padding: 1px 4px 1px 4px;
+    background-color: #404040;
+}
+
+.error {
+    color: #AA0000;
+}
+
+header {
+    display: flex;
+    justify-content: space-between;
+}
+
+.logout {
+    display: flex;
+}
+
+.logout > * {
+    margin-left: 5px;
+}
+
+.select > hr {
+    width: 100%;
+}
+
+#add {
+    width: 150px;
+    text-align: center;
+    padding-left: 0px;
+    font-size: 17px;
+}
+
+a:has(> #add) {
+    align-self: center;
+}
+
+label {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.select > form {
+    width: 350px;
+}
+
+.select > form button {
+    width: 100%;
+}
+
+.select > form input {
+    color: black;
+}
+
+.remove {
+    position: fixed;
+    visibility: hidden;
+}
