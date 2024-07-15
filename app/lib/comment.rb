@@ -1,18 +1,13 @@
-require 'json'
+require './lib/database'
 
 class Comment
-    COMMENTS = JSON.load(File.read("#{__dir__}/../../db/comments.json"))
+    COMMENTS = Database::DB[:comments]
 
     def self.add (email, body)
-        f = File.open("#{__dir__}/../../db/comments.json", "w")
-        COMMENTS["comments"].push({email => {"timestamp" => Time.now, "comment" => body}})
-        f.write(JSON.pretty_generate(COMMENTS))
-        f.close()
+        COMMENTS.insert([:email, :timestamp, :comment], [email, Time.now, body])
     end
 
-    # private
-    
-    # def get_json (name)
-    #     f = File.open("#{__dir__}/../../db/comments.json", "w")
-    # end
+    def self.get ()
+        return COMMENTS.all
+    end
 end

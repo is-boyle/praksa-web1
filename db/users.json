@@ -1,5 +1,30 @@
 {
   "lukas.marovic5@gmail.com": {
-    "name": "lukas"
+    "name": "lukas",
+    "password": "password"
+  },
+  "lukas.lukas@gmail.com": {
+    "name": "luk",
+    "password": "luklukluk"
+  },
+  "help@help.com": {
+    "name": "help",
+    "password": "helpme"
+  },
+  "test.test@gmail.com": {
+    "name": "test",
+    "password": "test"
+  },
+  "lol@gmail.com": {
+    "name": "lol",
+    "password": "lol"
+  },
+  "h@h.com": {
+    "name": "h",
+    "password": "h"
+  },
+  "lgf@gf.c": {
+    "name": "ff",
+    "password": "a"
   }
 }

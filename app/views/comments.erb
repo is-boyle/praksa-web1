@@ -11,8 +11,11 @@
         <%# <form name="userselect" method="get" action="/user-select">
             <button>User select</button>
         </form> %>
-        <a href="/user-select">User select</a>
-        <% if !user.nil? %>
+        <%# <a href="/user-select">User select</a> %>
+        <% if user.nil? %>
+            <a href="/log-in">Log in</a>
+            <a href="/user-add">Register</a>
+        <% else %>
             <div class="logout">
                 <span>Logged in as <%= user %></span>
                 <%# <form method="get" name="logout" action="/log-out">
@@ -35,7 +38,7 @@
     <br/>
     <% for comment in comments %>
         <div class="comment">
-            <%= comment.keys.first %>, <%= comment[comment.keys.first]["timestamp"] %><br/><hr> "<%= comment[comment.keys.first]["comment"]%>"
+            <%= comment[:email] %>, <%= comment[:timestamp] %><br/><hr> "<%= comment[:comment]%>"
         </div>
     <% end %>
 </body>

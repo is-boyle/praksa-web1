@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Log in via e-mail</title>
+    <link rel="stylesheet" href="/styles/comments.css">
+</head>
+<body class="page">
+    <div class="select">
+        <form name="login" method="post" action="/login-via-email">
+            <fieldset>
+                <% if flash[:error] %>
+                    <p class="error"><%= flash[:error] %></p>
+                <% end %>
+                <p>
+                    <label>
+                        <span>E-mail:</span>
+                        <input type="text" name="email" size="25" required>
+                    </label>
+                </p>
+                <button>Send e-mail</button>
+            </fieldset>
+        </form>
+    </div>
+</body>
+</html>

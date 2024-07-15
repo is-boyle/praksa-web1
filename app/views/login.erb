@@ -3,12 +3,12 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Register</title>
+    <title>Log in</title>
     <link rel="stylesheet" href="/styles/comments.css">
 </head>
 <body class="page">
     <div class="select">
-        <form name="useradd" method="post" action="/user-add">
+        <form name="login" method="post" action="/log-in">
             <fieldset>
                 <% if flash[:error] %>
                     <p class="error"><%= flash[:error] %></p>
@@ -16,13 +16,7 @@
                 <p>
                     <label>
                         <span>E-mail:</span>
-                        <input type="text" name="email" size="25" pattern=".+@.+\..+" title="Not a valid e-mail address" required>
-                    </label>
-                </p>
-                <p>
-                    <label>
-                        <span>Name:</span>
-                        <input type="text" name="name" size="25" required>
+                        <input type="text" name="email" size="25" required>
                     </label>
                 </p>
                 <p>
@@ -31,7 +25,12 @@
                         <input type="password" name="password" size="25" required>
                     </label>
                 </p>
-                <button>Add user</button>
+                <button>Log in</button>
+            </fieldset>
+        </form>
+        <form name=emaillogin method="get" action="/log-in/email">
+            <fieldset>
+                <button>Log in via e-mail</button>
             </fieldset>
         </form>
     </div>

@@ -10,7 +10,7 @@
     <div class="select">
         <p id="users">Users</p>
         <% for user in users %>
-            <a href="/user-select/<%= user[0] %>"><p class="user"><%= user[1]["name"].capitalize %></p></a>
+            <a href="/user-select/<%= user[:id] %>"><p class="user"><%= user[:name].capitalize %></p></a>
         <% end %>
         <hr>
         <a href="/user-add"><p class="user" id="add">Add new user</p></a>
