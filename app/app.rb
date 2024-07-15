@@ -7,6 +7,8 @@ require './lib/database'
 
 enable :sessions
 
+secret = "jifjoimyiomiofmesy"
+
 Mail.defaults do
     delivery_method :smtp, address: "localhost", port: 1025
 end
@@ -79,9 +81,8 @@ get '/log-in/email' do
 end
 
 post '/login-via-email' do
-    secret = "jifjoimyiomiofmesy"
     hash = { "email" => params[:email] }
-    body = "http://localhost:4567/login-via-email?hash=#{JWT.encode hash, nil, 'none'}"
+    body = "http://localhost:4567/login-via-email?hash=#{JWT.encode hash, secret, 'HS256'}"
     Mail.deliver do
         from     'comments@site.com'
         to       hash["email"]
@@ -93,7 +94,7 @@ end
 
 get '/login-via-email' do
     begin
-        hash = JWT.decode params[:hash], nil, false
+        hash = JWT.decode params[:hash], secret, 'HS256'
         email = hash[0]["email"]
         if User.exists(email)
             session[:email] = email
