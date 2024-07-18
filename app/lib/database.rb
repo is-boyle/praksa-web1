@@ -1,5 +1,5 @@
 class Database
-  DB = Sequel.sqlite('../db/comments.sqlite')
+  DB = Sequel.sqlite('./db/comments.sqlite')
   
   def self.initialize()
 

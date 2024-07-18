@@ -1,5 +1,5 @@
 # require 'json'
-require './lib/database'
+require './app/lib/database'
 
 
 class User

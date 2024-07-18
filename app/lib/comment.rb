@@ -1,4 +1,4 @@
-require './lib/database'
+require_relative './database'
 
 class Comment
     COMMENTS = Database::DB[:comments]

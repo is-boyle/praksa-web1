@@ -1,9 +1,9 @@
 require 'bundler/setup'
 Bundler.require(:default)
 
-require './lib/comment'
-require './lib/user'
-require './lib/database'
+require './app/lib/comment'
+require './app/lib/user'
+require './app/lib/database'
 
 enable :sessions
 
